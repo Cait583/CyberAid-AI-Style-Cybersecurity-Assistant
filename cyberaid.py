@@ -37,8 +37,8 @@ def main(): # Here I am creating a new function to start getting users input the
         else:
             print_ai("❌ Invalid choice, please enter a number between 1 and 6.")
 
-def analyze_email(): # I am creating another new function to group all of the emails into a resuable box
-    print_ai("\n[Phishing Email Analyzer]") # This tell the user with an AI typing effect that it will analzye the emails to check for any phishing
+def analyze_email(): # I am creating another new function to group all the emails into a reusable box
+    print_ai("\n[Phishing Email Analyzer]") # This tell the user with an AI typing effect that it will analyze the emails to check for any phishing
     email_text = input("Paste the suspicious email content here:\n") # This asks the user to paste or type the email content they want analyzed
     email_text_lower = email_text.lower() # This makes all the email text into lowercase
     suspicious_keywords = ['urgent', 'password', 'verify', 'account', 'click', 'bank', 'login', 'security', 'update', 'risk'] # Here I created a list of common phishing keywords used in emails
@@ -55,8 +55,8 @@ def analyze_email(): # I am creating another new function to group all of the em
     print_ai("Remember: This is a simple check, always be cautious with unknown emails!\n") # This gives the user a reminder to use this tool as a basic filter and the user should still be very careful don't fully rely on this
 
 def check_password(): # Created another new function to checks the password which is option 2
-    print_ai("\n[Password Strength Checker]") # This has the "ai" print this to show to the user what it is doing
-    password = input("Enter the password to check: ") # Informs the user to know give it the passowrd to check for its strength
+    print_ai("\n[Password Strength Checker]") # This has the "AI" print this to show to the user what it is doing
+    password = input("Enter the password to check: ") # Informs the user to know give it the password to check for its strength
     # Here I am having Python check each character and letter to ensure it is a strong password
     length_ok = len(password) >= 12
     has_upper = any(char.isupper() for char in password)
@@ -90,7 +90,7 @@ def review_url(): # Creates a new function for the 3rd choice
     url = input("Enter the URL to check: ").lower() # This asks the user to give the URl for the program to check or "AI" in this case
     suspicious_patterns = ['@', 'http//', 'https//', 'login', 'secure', 'account', 'update', 'free', 'verify', 'bank'] # This creates a list of common suspicious keywords or characters found in URLs
     found_patterns = [] # Makes an empty list to track the suspicious parts
-    for pattern in suspicious_patterns: # Here I am using a for loop to to go through patterns
+    for pattern in suspicious_patterns: # Here I am using a for loop to go through patterns
         if pattern in url:
             found_patterns.append(pattern)
     # Here I used another for loop to check the patterns if found it will warn the user if not it will let them know it is fine
@@ -98,11 +98,11 @@ def review_url(): # Creates a new function for the 3rd choice
         print_ai(f"⚠️ Warning: Suspicious patterns detected in URL: {', '.join(found_patterns)}")
     else:
         print_ai("✅ URL looks clean based on basic checks.")
-    # This informs the user to always check the URL even if using this to double check
+    # This informs the user to always check the URL even if using this to double-check
     print_ai("Remember to always check the URL carefully before clicking!\n")
 
 def scan_logs(): # Creating a new function for number 4
-    print_ai("\n[Brute Force Log Scanner]") # Infomrs the user what this choice is
+    print_ai("\n[Brute Force Log Scanner]") # Informs the user what this choice is
     print("Paste server log lines (type 'END' on a new line to finish):") # Asks the user to paste the server log lines to scan them
     # Here I created an empty list to keep the logs stored in and started a while and for loop below to check if the user types END to stop collecting the logs
     logs = []
@@ -135,13 +135,13 @@ def scan_logs(): # Creating a new function for number 4
 
 def generate_report(): # Here I am creating another new function to handle option 5 for the user
     print_ai("\n[Incident Report Generator]") # Informs the user of their choice
-    # Here I am asking the user for information about the incident that occured
+    # Here I am asking the user for information about the incident that occurred
     incident_type = input("Enter the type of incident (e.g., phishing, malware, brute force): ")
     date = input("Enter the date of the incident (YYYY-MM-DD): ")
     affected_systems = input("List affected systems or users (comma separated): ")
     description = input("Describe what happened briefly: ")
 
-    # Here I am creating a formatted multiline string with their info inserted to created an incident report template
+    # Here I am creating a formatted multiline string with their info inserted to create an incident report template
     report = f"""
 --- Cybersecurity Incident Report ---
 
